@@ -1,2 +1,18 @@
+# Pretrained model and sample image
 yolov8n.pt
 bus.jpg
+
+# Datasets
+data/
+
+# Training results and model checkpoints
+runs/
+
+# Python environment
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store

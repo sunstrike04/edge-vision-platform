@@ -1,15 +1,17 @@
 from ultralytics import YOLO
 
-model = YOLO("runs/detect/runs/yolov8n_baseline/weights/best.pt")
+model = YOLO("runs/detect/warehouse_baseline/weights/best.pt")
 
 metrics = model.val(
     data="data/warehouse/data.yaml",
-    split="val",
-    device="mps"
+    split="test",
+    device="mps",
+    project="runs/detect",
+    name="warehouse_baseline_test"
 )
 
-print("\nBaseline Evaluation")
-print("-------------------")
+print("\nWarehouse Baseline — Test Results")
+print("---------------------------------")
 print(f"Precision:   {metrics.box.mp:.4f}")
 print(f"Recall:      {metrics.box.mr:.4f}")
 print(f"mAP50:       {metrics.box.map50:.4f}")
